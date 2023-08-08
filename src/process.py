@@ -13,6 +13,7 @@ if ser.isOpen() == False :
         print("Tried to open serial port, but failed")
         sys.exit(1)
 
+#count = 0
 int_received = 0
 data_array = np.empty(num_samples, dtype=np.int32)
 
@@ -33,7 +34,11 @@ while True :
     elapsed = end - start
     print("Received ", data_array.size, " samples")
     print("Took ", elapsed, "seconds")
+    #count += 1
     int_received = 0;
+    #if count == 3:
+        #np.savetxt("samples", data_array, delimiter=',')
+
 
 
 
