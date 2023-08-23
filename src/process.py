@@ -3,9 +3,9 @@ import serial
 import numpy as np
 import time
 
-num_samples = 666666;
+num_samples = 700000;
 
-ser = serial.Serial('COM19', 2000000)
+ser = serial.Serial('COM22', 2000000)
 
 if ser.isOpen() == False :
     ser.open()
@@ -13,7 +13,7 @@ if ser.isOpen() == False :
         print("Tried to open serial port, but failed")
         sys.exit(1)
 
-#count = 0
+count = 0
 int_received = 0
 data_array = np.empty(num_samples, dtype=np.int32)
 
@@ -27,6 +27,8 @@ while True :
             try:
                 data_array[int_received] = int.from_bytes(data, byteorder='little', signed=True)
                 int_received += 1
+                if int_received == 900:
+                    print(data)
             except ValueError:
                 print("Invalid Data Received: ", data)
 

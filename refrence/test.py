@@ -1,7 +1,7 @@
 import serial
 import time
 
-ser = serial.Serial('COM20', 9600)
+ser = serial.Serial('COM22', 9600)
 
 def led_on_off():
     user_input = input("\n Type on / off/ quit: ")
