@@ -5,7 +5,7 @@ import time
 
 num_samples = 666666;
 
-ser = serial.Serial('COM19', 115200)
+ser = serial.Serial('COM19', 2000000)
 
 if ser.isOpen() == False :
     ser.open()

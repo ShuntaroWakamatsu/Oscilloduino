@@ -19,15 +19,4 @@ if ser.isOpen() == False :
 
 while 1 :
    if ser.inWaiting() > 0 :
-      #ser.read(16384);
-      # Read a character from the serial port
-      received_char = ser.read().decode('utf-8')
-
-      if received_char:
-         sentence += received_char
-
-         # Check if the end of a sentence is reached
-         if received_char == '\n':
-            print("Received Sentence:", sentence.strip())
-            sentence = ""  # Reset the sentence
-
+      ser.read(16384);
