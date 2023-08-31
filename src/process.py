@@ -26,7 +26,6 @@ while True :
     start = time.time()
 
     serial_data = ser.read(num_samples * 2)
-    print("Haha", serial_data[0:20])
     unpacked_data = s.unpack(serial_data)
 
     end = time.time()
